@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AgentDeck",
+  "version": "0.1.0",
+  "identifier": "app.agentdeck.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm --dir ../.. web",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm --dir ../.. build",
+    "frontendDist": "../../../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "AgentDeck",
+        "width": 1380,
+        "height": 900,
+        "minWidth": 900,
+        "minHeight": 650
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: data:; connect-src ipc: http://ipc.localhost 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.png", "icons/icon.ico", "icons/icon.icns"],
+    "externalBin": ["binaries/agentdeck-collector"],
+    "resources": {
+      "../../../collectors/": "collectors/"
+    },
+    "linux": {
+      "deb": {
+        "depends": ["openssh-client"]
+      }
+    }
+  }
+}

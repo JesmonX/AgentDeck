@@ -1,0 +1,13 @@
+node_modules/
+dist/
+target/
+artifacts/
+release-assets/
+collector-assets/
+__pycache__/
+.DS_Store
+*.log
+.env
+collectors/
+apps/desktop/src-tauri/binaries/
+apps/desktop/src-tauri/gen/
