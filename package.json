@@ -14,7 +14,7 @@
     "test:browser": "node scripts/browser-check.mjs"
   },
   "dependencies": {
-    "@tauri-apps/api": "^2.11.1",
+    "@tauri-apps/api": "2.11.1",
     "echarts": "^6.0.0",
     "lucide-react": "^0.468.0",
     "react": "^19.2.8",
